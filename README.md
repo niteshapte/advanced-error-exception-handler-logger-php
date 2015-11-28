@@ -1,4 +1,4 @@
 # advanced-error-exception-handler-logger-php
 Handles and logs the errors and exception occurs in the project.
 
-This is an advanced version of https://github.com/niteshapte/error-and-exception-handler-logger-php.
+This is an advanced version of https://github.com/niteshapte/error-and-exception-handler-logger-php. In this one you can add custom codes for exception. Make sure when you create/use code for exception it follow some rules. For instance, use code 888 for exceptions occured during database connectivity. 
