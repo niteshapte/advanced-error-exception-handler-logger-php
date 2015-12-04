@@ -46,33 +46,13 @@ class ErrorExceptionHandler implements IUtilities {
 	 * @var $errorType PHP defined errors
 	 * @see customError()
 	 */
-	private $errorType = array (
-			E_ERROR           	=> 'ERROR',
-			E_WARNING         	=> 'WARNING',
-			E_PARSE           	=> 'PARSING ERROR',
-			E_NOTICE          	=> 'NOTICE',
-			E_CORE_ERROR      	=> 'CORE ERROR',
-			E_CORE_WARNING    	=> 'CORE WARNING',
-			E_COMPILE_ERROR   	=> 'COMPILE ERROR',
-			E_COMPILE_WARNING 	=> 'COMPILE WARNING',
-			E_USER_ERROR      	=> 'USER ERROR',
-			E_USER_WARNING    	=> 'USER WARNING',
-			E_USER_NOTICE     	=> 'USER NOTICE',
-			E_STRICT 		  	=> 'STRICT',
-			E_RECOVERABLE_ERROR => 'RECOVERABLE ERROR',
-			E_DEPRECATED 		=> 'DEPRECATED',
-			E_USER_DEPRECATED 	=> 'USER_DEPRECATED'
-	);
+	private $errorType;
 	
 	/**
 	 * @var array $exceptionType Custom exception number
 	 * @see exceptionHandler
 	 */
-	private $exceptionType = array (
-			1001				=> 'INCORRECT FORMAT',
-			1002				=> 'INVALID FILE'
-			// Put whatever you want. But make sure you are following a pattern of code that can be understood easily.
-	);
+	private $exceptionType;
 	
 	/**
 	 * Initiate the handlers
@@ -81,6 +61,8 @@ class ErrorExceptionHandler implements IUtilities {
 	 * @return none
 	 */
 	private function __construct() {
+		$this->errorType = include 'ErrorCodes.inc';
+                $this->exceptionType = include 'ExceptionCodes.inc';
 		$this->enableHandler();
 	}
 	
